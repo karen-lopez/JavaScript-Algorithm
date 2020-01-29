@@ -7,11 +7,10 @@ function titleCase(str) {
   let newStr = "";
   let palabras = str.match(expRegular);
   for(let i = 0; i < palabras.length; i++){
-    if(palabras[i].charCodeAt(0) > 96){
-      let caracter = String.fromCharCode(palabras[i].charCodeAt(0) - 32);
-      let cadena = caracter + palabras[i].substring(1);
-      palabras[i] = cadena;
-    }
+    palabras[i] = palabras[i].toLowerCase()
+    let caracter = String.fromCharCode(palabras[i].charCodeAt(0) - 32);
+    let cadena = caracter + palabras[i].substring(1);
+    palabras[i] = cadena;
     newStr = newStr.concat(palabras[i] + " ");
   }
   newStr = newStr.trim();
